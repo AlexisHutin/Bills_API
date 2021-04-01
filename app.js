@@ -7,7 +7,8 @@ const path = require('path');
 const config = require('./config.json');
 
 //--- Import ROUTES ---//
-const userRoutes = require('./routes/user');
+const UsersRoutes = require('./routes/UsersRoutes');
+const CustomersRoutes = require('./routes/CustomersRoutes');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 //--- Use ROUTES ---//
-app.use('/api/user', userRoutes);
+app.use('/api/user', UsersRoutes);
+app.use('/api/customer', CustomersRoutes);
 
 module.exports = app;
